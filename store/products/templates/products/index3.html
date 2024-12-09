@@ -1,0 +1,53 @@
+{% extends 'products/base.html'%}
+{% load static %}
+
+{% block CSS%}
+  <link rel="stylesheet" href="{% static 'css/index3.CSS' %}">
+{% endblock %}
+
+{% block content %}
+<div class="main-content">
+    <form action="{% url 'index3' %}" method='post'>
+      {% csrf_token %}
+      <div class="white-rectangle">
+        <div id='profile'>
+          <div class="title">PROFILE</div>
+        </div>
+        <div class="input-container">
+          <label for="{{ form.first_name.id_for_lable }}">
+            NAME
+          </label>
+          {{ form.first_name }}
+          <label for="{{ form.last_name.id_for_label }}">
+            SURNAME
+          </label>
+          {{ form.last_name }}
+          <label for="{{ form.username.id_for_label }}">
+            LOGIN
+          </label>
+          {{ form.username }}
+          <label for="{{ form.email.id_for_label }}">E-MAIL</label>
+          {{ form.email }}
+        </div>
+        <div class="button-container">
+          <button type="submit" class='btn'>save changes</button>
+        </div>
+        <a href="{% url 'custom_logout' %}" class='btn'>exit</a>
+      </div>
+    </form>
+</div>
+{% endblock %}
+
+{% block footer %}
+<footer class="footer">
+    <div class="left">
+      <div class="bottom-subtitle">Spain, Bilbao</div>
+      <div class="bottom-subtitle">Calle iscar peyra 15-17</div>
+    </div>
+    <div class="right">
+      <div class="bottom-subtitle">General manager:</div>
+      <div class="bottom-subtitle">Eugenia Marcos Lopez</div>
+    </div>
+</footer>
+{% endblock %}
+

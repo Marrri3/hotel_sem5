@@ -1,0 +1,72 @@
+<html>
+{% extends 'products/base.html' %}
+{% load static%}
+
+{% block CSS%}
+  <link rel="stylesheet" href="{% static '/css/index.css' %}">
+{% endblock %}
+
+
+{% block catalog %}
+<a href="#catalog">catalog</a>
+{% endblock %}
+
+{% block catalog_hambyrger%} 
+<a href="#catalog">catalog</a>
+{% endblock %} 
+
+
+{% block content %}
+<div id="home">
+  <div class="title">FOUR SEASON</div>
+  <div class="subtitle">hotel</div>
+  <div class="image-container">
+    <img src="{% static '/image/image1.jpg' %}" id="img1">
+    <img src="{% static '/image/image2.jpg' %}" id="img2">
+    <img src="{% static '/image/image3.jpg' %}" id="img3">
+    <img src="{% static '/image/image4.jpg' %}" id="img4">
+  </div>
+</div>
+
+<body>
+    <div class="title">CATALOG</div>
+    <form id="bookingForm" class="container" method="post" action="{% url 'index' %}">
+        {% csrf_token %}
+        <div class="input-container">
+            {{ form.checkin }}
+        </div>
+        <div class="input-container">
+            {{ form.checkout }}
+        </div>
+        <div class="input-container">
+            {{ form.room_type }}
+        </div>
+        <div class="input-container">
+            {{ form.rooms }}
+        </div>
+        <div class='button-container'>
+            <button type="submit" id="searchButton" class="btn">SEARCH</button>
+        </div>
+    </form>
+    <img src="{% static 'image/image5.jpg' %}" id="img5">
+
+{% endblock %}
+
+{% block footer %}
+<footer class="footer">
+  <div class="left">
+    <div class="bottom-subtitle">Spain, Bilbao</div>
+    <div class="bottom-subtitle">Calle iscar peyra 15-17</div>
+  </div>
+  <div class="right">
+    <div class="bottom-subtitle">General manager:</div>
+    <div class="bottom-subtitle">Eugenia Marcos Lopez</div>
+  </div>
+</footer>
+{% endblock %}
+</body>
+</html>
+
+
+
+

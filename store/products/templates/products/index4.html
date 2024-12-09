@@ -1,0 +1,64 @@
+{% extends 'products/base.html' %}
+{% load static %}
+
+{% block CSS %}
+  <link rel="stylesheet" href="{% static 'css/index4.css' %}">
+{% endblock %}
+
+{% block content %}
+<div id="about">
+    <div class="title">CATALOG</div>    
+</div>
+
+{% if user.is_authenticated and user.is_staff %}
+  <div class="change-data-btn-container"> 
+    <a href="{% url 'admin:index' %}" class="change-data-btn">Change</a>
+  </div> 
+{% endif %}
+
+{% for number in numbers %}
+  <div class="center-container">
+    <div class="rounded-rectangle">
+        <img src="{{ number.image }}" id="{{number.id_image}}" style="width: 100%; max-width: 300px; height: auto; border-radius: 10px;"> <!-- Устанавливаем размер изображения здесь -->
+        <div class="info-container">
+            <div id="{{number.id_name}}">
+                <div class="subtitle-row">
+                    <div class="subtitle1">type:</div>
+                    <div class="subtitle">{{number.characteristics.type}}</div>
+                </div>
+                <div class="subtitle-row">
+                    <div class="subtitle1">rooms:</div>
+                    <div class="subtitle">{{number.characteristics.number_of_rooms}}</div>
+                </div>
+                <div class="subtitle-row">
+                    <div class="subtitle1">floor:</div>
+                    <div class="subtitle">{{number.characteristics.floor}}</div>
+                </div>
+                <div class="subtitle-row">
+                    <div class="subtitle1">beds:</div>
+                    <div class="subtitle">{{number.characteristics.number_of_beds}}</div>
+                </div>
+                <div class="subtitle-row">
+                    <div class="subtitle1">price:</div>
+                    <div class="subtitle">{{number.characteristics.price}}</div>
+                </div>
+                <a href="{% url 'reservation_number' number.id %}" class="btn">reservation</a>
+            </div>
+        </div>
+    </div>
+  </div>
+{% endfor %}
+{% endblock %}
+
+{% block footer %}
+<footer class="footer">
+    <div class="left">
+      <div class="bottom-subtitle">Spain, Bilbao</div>
+      <div class="bottom-subtitle">Calle iscar peyra 15-17</div>
+    </div>
+    <div class="right">
+      <div class="bottom-subtitle">General manager:</div>
+      <div class="bottom-subtitle">Eugenia Marcos Lopez</div>
+    </div>
+</footer>
+{% endblock %}

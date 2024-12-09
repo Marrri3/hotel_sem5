@@ -1,0 +1,228 @@
+body {
+    font-family: 'Roboto Slab';
+    background-color: #EFEBE9;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-one {
+    display: flex;
+    font-size: 24px;
+    justify-content: space-between;
+    background-color: #F5F4F3;
+    padding: 0px 10px;
+}
+
+.navbar-left, .navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-one a {
+    color: black;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.navbar-one a:hover {
+    color: #2E7204;
+}
+
+.navbar-one a#home {
+    color: #2E7204;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #2E7204;
+    margin: 4px;
+}
+
+.dropdown {
+    display: none;
+    flex-direction: column;
+    background-color: #F5F4F3;
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    z-index: 1;
+}
+
+.dropdown a {
+    padding: 10px;
+    text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-left, .navbar-right {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .navbar-one.active .dropdown {
+        display: flex;
+    }
+}
+
+.title {
+    color: #2E7204;
+    font-size: 2.5rem; /* Увеличенный размер шрифта */
+    margin-top: 15px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.center-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.rounded-rectangle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 70%;
+    max-width: 700px;
+    margin: 10px 0;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; /* Добавлено позиционирование */
+    overflow: hidden;
+}
+
+.change-data-btn {
+    color: #000000; 
+    padding: 10px 20px; 
+    text-decoration: none; 
+    font-size: 1.2rem; /* Размер текста */ 
+    background-color: #dcd9d9; /* Цвет фона */ 
+    border-radius: 5px; /* Скругленные углы */ 
+    border: none; /* Убираем границу */ 
+    transition: background-color 0.3s ease; 
+    display: inline-block; 
+}
+
+.change-data-btn:hover { 
+    background-color: #2E7204; /* Цвет фона при наведении */ 
+    color: #fff; /* Цвет текста при наведении */ 
+}
+
+.change-data-btn-container { 
+    display: flex; 
+    justify-content: center; 
+    margin-top: 10px;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Центрирование текста по вертикали */
+    align-items: flex-start;
+    width: calc(100% - 120px); /* Ширина минус ширина изображения и отступы */
+    margin-left: 20px;
+    text-align: center; /* Выравнивание текста по ширине */
+}
+
+.info-container img {
+    width: 100px; /* Уменьшенная ширина изображения */
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.name-of-number {
+    font-size: 2.5rem; /* Увеличенный размер шрифта */
+    margin-bottom: 10px;
+    margin-top: 0;
+    word-break: break-word;
+}
+
+.subtitle1, .subtitle {
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem; /* Еще больший размер шрифта */
+}
+
+.subtitle-row {
+    display: flex;
+    gap: 10px;
+    margin: 5px 0;
+}
+
+
+@media (max-width: 768px) {
+    .rounded-rectangle {
+        flex-direction: column;
+    }
+    .info-container {
+        width: 100%; /* Ширина 100% для контейнера */
+        margin-left: 0;
+        text-align: center; /* Выравнивание текста по центру */
+    }
+    .subtitle {
+        font-size: 1.5rem;
+    }
+    .name-of-number {
+        font-size: 2rem;
+    }
+    .subtitle1 {
+        font-size: 1.5rem;
+    }
+    .reservation-link {
+        font-size: 1.5rem;
+        padding: 8px 15px;
+    }
+}
+
+.footer {
+    font-size: 20px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer .left, .footer .right {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 40px;
+}
+
+.btn {
+    color: #000000; 
+    padding: 10px 20px; 
+    text-decoration: none; 
+    font-size: 1.2rem; /* Размер текста */ 
+    background-color: #dcd9d9; /* Цвет фона */ 
+    border-radius: 5px; /* Скругленные углы */ 
+    border: none; /* Убираем границу */ 
+    transition: background-color 0.3s ease; 
+    display: inline-block; 
+    margin-top: 10px;
+} 
+.btn:hover { 
+    background-color: #2E7204; /* Цвет фона при наведении */ 
+    color: #fff; /* Цвет текста при наведении */ 
+}
